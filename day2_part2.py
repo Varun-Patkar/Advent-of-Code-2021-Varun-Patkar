@@ -1,0 +1,17 @@
+f = open('input_2.txt', 'r')
+l = [i.rstrip('\n') for i in f.readlines()]
+h, d = 0, 0
+aim=0
+for st in l:
+	if st[:7] == "forward":
+		h += int(st[8:])
+		d += aim*int(st[8:])
+	elif st[:2] == "up":
+		aim -= int(st[3:])
+	elif st[:4] == "down":
+		aim += int(st[5:])
+	else:
+		print("Input is bad!!😔😭")
+print("Height:", h, "\nDepth:", d)
+print("Ans:", h*d)
+f.close()
